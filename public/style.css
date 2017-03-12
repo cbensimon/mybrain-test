@@ -1,0 +1,45 @@
+* {
+	box-sizing: border-box;
+}
+
+[ng-app] {
+	display: flex;
+}
+
+.form-column {
+	display: flex;
+	height: 100vh;
+	padding: 15px;
+	flex-direction: column;
+}
+
+.form-column button {
+	width: 150px;
+	margin: auto auto 0;
+}
+
+.form-column input {
+	position: absolute;
+	transform: scale(0,0);
+}
+
+.form-column label {
+	display: block;
+	padding: 10px;
+	text-transform: uppercase;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.form-column h2 {
+	text-align: center;
+}
+
+#graph-container {
+	flex-grow: 1;
+}
+
+input:checked ~ label,
+label:hover {
+	background-color: #7cc9ff;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>MyBrain Test</title>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<link rel="stylesheet" href="/style.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.9/semantic.min.css">
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    	<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+	</head>
+	<body>
+		<div ng-app="mybrain" ng-controller="mainController">
+			<div class="form-column" id="userId-form">
+				<h2>User</h2>
+				<div ng-repeat="userId in userIds">
+					<input
+						type="radio"
+						id="userId-{{userId}}"
+						ng-model="user.selectedId"
+						ng-value="userId"
+						name="userId"
+					/>
+					<label for="userId-{{userId}}">
+						{{userId}}
+					</label>
+				</div>
+				<button ng-click="byUser()">
+					Show user's data
+				</button>
+			</div>
+			<div class="form-column" id="tags-form">
+				<h2>Tags</h2>
+				<div ng-repeat="tag in tags">
+					<input
+						type="checkbox"
+						ng-model="tag.selected"
+						id="tag-{{tag}}"
+					/>
+					<label for="tag-{{tag}}">
+						{{tag.name}}
+					</label>
+				</div>
+				<button ng-click="byTags()">
+					Show tags data
+				</button>
+			</div>
+			<div id="graph-container">
+			</div>
+		</div>
+		<script src="/script.js"></script>
+	</body>
+</html>

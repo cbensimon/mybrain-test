@@ -1,28 +1,3 @@
-$(function() {
-	$.ajax({
-		type: 'POST',
-		contentType: 'application/json',
-		url: '/retrieveData',
-		data: JSON.stringify({
-			userId: '46b713b2-026b-4f70-b165-9aa2f009e97a'
-		}),
-		success: function(data) {
-			console.log(data)
-		}
-	})
-	$.ajax({
-		type: 'POST',
-		contentType: 'application/json',
-		url: '/retrieveData',
-		data: JSON.stringify({
-			tags: ['tag_1', 'tag_3']
-		}),
-		success: function(data) {
-			console.log(data)
-		}
-	})
-})
-
 angular.module('mybrain', [])
 	.controller('mainController', function($scope, $http) {
 
